@@ -1,4 +1,4 @@
-namespace DepotEice.Api
+namespace Depot.Eice.Api.UIL
 {
     public class Program
     {

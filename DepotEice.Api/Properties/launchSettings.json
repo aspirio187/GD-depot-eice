@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "DepotEice.Api": {
+    "Depot.Eice.Api.UIL": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

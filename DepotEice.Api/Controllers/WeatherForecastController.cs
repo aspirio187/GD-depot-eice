@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DepotEice.Api.Controllers
+namespace Depot.Eice.Api.UIL.Controllers
 {
     [ApiController]
     [Route("[controller]")]
