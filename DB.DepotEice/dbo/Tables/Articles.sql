@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Articles]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Title] NVARCHAR(100) NOT NULL,
+	[Body] NVARCHAR(MAX) NOT NULL,
+	[CreatedAt] DATETIME NOT NULL,
+	[UpdatedAt] DATETIME NOT NULL,
+	[Pinned] BIT NOT NULL,
+	[UserId] NVARCHAR(36) NOT NULL,
+	CONSTRAINT [FK_Articles_User] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id])
+)
