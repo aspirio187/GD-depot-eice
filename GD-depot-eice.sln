@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.DepotEice.BLL", "API.De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.DepotEice.UIL", "API.DepotEice.UIL\API.DepotEice.UIL.csproj", "{D6DA2694-D073-4768-8012-5D210307D38F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.DepotEice.UIL", "App.DepotEice.UIL\App.DepotEice.UIL.csproj", "{DABDD28A-C18B-4DF6-B667-EC15EF26BA1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.DepotEice.UIL", "App.DepotEice.UIL\Web.DepotEice.UIL.csproj", "{DABDD28A-C18B-4DF6-B667-EC15EF26BA1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

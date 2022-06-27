@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "App.DepotEice.UIL": {
+    "Web.DepotEice.UIL": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
