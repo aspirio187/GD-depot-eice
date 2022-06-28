@@ -28,7 +28,8 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="expirationDateTime"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public UserToken(string id, string type, string value, DateTime deliveryDateTime, DateTime expirationDateTime)
+        public UserToken(string id, string type, string value, DateTime deliveryDateTime,
+            DateTime expirationDateTime)
         {
             Id = id ??
                 throw new ArgumentNullException(nameof(id));

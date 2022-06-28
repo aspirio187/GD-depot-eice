@@ -15,11 +15,13 @@ namespace DepotEice.Shared.Exceptions
         {
         }
 
-        public DateTimeOutOfRangeException(string message, Exception innerException) : base(message, innerException)
+        public DateTimeOutOfRangeException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
 
-        protected DateTimeOutOfRangeException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected DateTimeOutOfRangeException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
         {
         }
     }
