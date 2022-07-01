@@ -38,7 +38,7 @@ namespace API.DepotEice.DAL.Entities
         public string UserId { get; set; }
 
         /// <summary>
-        /// Instanciate <see cref="AppointmentEntity"/> object
+        /// Instanciate an object <see cref="AppointmentEntity"/> and initialize all properties
         /// </summary>
         /// <param name="id">Appointment ID</param>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
@@ -51,7 +51,7 @@ namespace API.DepotEice.DAL.Entities
         public AppointmentEntity(int id, DateTime startsAt, DateTime endsAt, bool accepted,
             string userId)
         {
-            if (id < 0) throw new IndexOutOfRangeException(nameof(id));
+            if (id <= 0) throw new IndexOutOfRangeException(nameof(id));
             if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
             if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
 
@@ -63,7 +63,8 @@ namespace API.DepotEice.DAL.Entities
         }
 
         /// <summary>
-        /// Instanciate an <see cref="AppointmentEntity"/> object without specify ID
+        /// Instanciate an object <see cref="AppointmentEntity"/> without specifying 
+        /// <see cref="Id"/>
         /// </summary>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
         /// <param name="endsAt">Date and time at which ends the appointment</param>
@@ -76,6 +77,7 @@ namespace API.DepotEice.DAL.Entities
             if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
 
+            Id = 0;
             StartsAt = startsAt;
             EndsAt = endsAt;
             Accepted = accepted;
