@@ -87,6 +87,8 @@
     <Build Include="dbo\StoredProcedures\spGetArticleComments.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticle.sql" />
     <Build Include="dbo\StoredProcedures\spUserMessages.sql" />
+    <Build Include="dbo\StoredProcedures\spCreateAppointment.sql" />
+    <Build Include="dbo\Functions\fnHashPassword.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
