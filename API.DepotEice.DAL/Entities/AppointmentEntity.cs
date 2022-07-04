@@ -45,13 +45,13 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="endsAt">Date and time at which ends the appointment</param>
         /// <param name="accepted">Appointment acceptance flag</param>
         /// <param name="userId">Linked user's ID</param>
-        /// <exception cref="IndexOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public AppointmentEntity(int id, DateTime startsAt, DateTime endsAt, bool accepted,
             string userId)
         {
-            if (id <= 0) throw new IndexOutOfRangeException(nameof(id));
+            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
             if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
             if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
 

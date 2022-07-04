@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace API.DepotEice.DAL.Entities
 {
+    /// <summary>
+    /// Represent the <c>Users</c> table in the database
+    /// </summary>
     public class UserEntity
     {
         public string Id { get; set; }
@@ -23,35 +26,99 @@ namespace API.DepotEice.DAL.Entities
             string firstName, string lastName, DateOnly birthDate, string concurrencyStamp,
             string securityStamp, bool isActive)
         {
-            Id = id ??
+            if (string.IsNullOrEmpty(id))
+            {
                 throw new ArgumentNullException(nameof(id));
+            }
 
-            Email = email ??
+            if (string.IsNullOrEmpty(email))
+            {
                 throw new ArgumentNullException(nameof(email));
+            }
 
-            NormalizedEmail = normalizedEmail ??
+            if (string.IsNullOrEmpty(normalizedEmail))
+            {
                 throw new ArgumentNullException(nameof(normalizedEmail));
+            }
 
-            PasswordHash = passwordHash ??
+            if (string.IsNullOrEmpty(passwordHash))
+            {
                 throw new ArgumentNullException(nameof(passwordHash));
+            }
 
-            FirstName = firstName ??
+            if (string.IsNullOrEmpty(firstName))
+            {
                 throw new ArgumentNullException(nameof(firstName));
+            }
 
-            LastName = lastName ??
+            if (string.IsNullOrEmpty(lastName))
+            {
                 throw new ArgumentNullException(nameof(lastName));
+            }
 
-            BirthDate = (birthDate < new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))
-                ? birthDate
-                : throw new ArgumentOutOfRangeException(nameof(birthDate));
+            DateTime now = DateTime.Now;
 
-            ConcurrencyStamp = concurrencyStamp ??
+            if (birthDate > new DateOnly(now.Year, now.Month, now.Day))
+            {
+                throw new ArgumentOutOfRangeException(nameof(birthDate));
+            }
+
+            if (string.IsNullOrEmpty(concurrencyStamp))
+            {
                 throw new ArgumentNullException(nameof(concurrencyStamp));
+            }
 
-            SecurityStamp = securityStamp ??
+            if (string.IsNullOrEmpty(securityStamp))
+            {
                 throw new ArgumentNullException(nameof(securityStamp));
+            }
 
+            Id = id;
+            Email = email;
+            NormalizedEmail = normalizedEmail;
+            PasswordHash = passwordHash;
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDate = birthDate;
+            ConcurrencyStamp = concurrencyStamp;
+            SecurityStamp = securityStamp;
             IsActive = isActive;
+        }
+
+        public UserEntity(string email, string firstName, string lastName, DateOnly birthDate)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentNullException(nameof(email));
+            }
+
+            if (string.IsNullOrEmpty(firstName))
+            {
+                throw new ArgumentNullException(nameof(firstName));
+            }
+
+            if (string.IsNullOrEmpty(lastName))
+            {
+                throw new ArgumentNullException(nameof(lastName));
+            }
+
+            DateTime now = DateTime.Now;
+
+            if (birthDate > new DateOnly(now.Year, now.Month, now.Day))
+            {
+                throw new ArgumentOutOfRangeException(nameof(birthDate));
+            }
+
+            Id = Guid.NewGuid().ToString();
+            Email = email;
+            NormalizedEmail = email.ToUpper();
+            // TODO : Hash password here or in the database ?
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDate = birthDate;
+            ConcurrencyStamp = Guid.NewGuid().ToString();
+            SecurityStamp = Guid.NewGuid().ToString();
+            IsActive = false;
         }
     }
 }

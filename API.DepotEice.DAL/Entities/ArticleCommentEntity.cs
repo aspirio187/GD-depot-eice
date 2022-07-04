@@ -55,15 +55,15 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="updatedAt">The update date and time</param>
         /// <param name="articleId">The related article's ID</param>
         /// <param name="userId">The ID of the user who wrote this comment</param>
-        /// <exception cref="IndexOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public ArticleCommentEntity(int id, int note, string review, DateTime createdAt, 
             DateTime updatedAt, int articleId, string userId)
         {
-            if (id <= 0) throw new IndexOutOfRangeException(nameof(id));
-            if (note < 0 || note > 5) throw new IndexOutOfRangeException(nameof(note));
+            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
+            if (note < 0 || note > 5) throw new ArgumentOutOfRangeException(nameof(note));
             if(string.IsNullOrEmpty(review)) throw new ArgumentNullException(nameof(review));
-            if (articleId <= 0) throw new IndexOutOfRangeException(nameof(articleId));
+            if (articleId <= 0) throw new ArgumentOutOfRangeException(nameof(articleId));
             if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
 
             Id = id;
@@ -84,14 +84,14 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="updatedAt">The update date and time</param>
         /// <param name="articleId">The related article's ID</param>
         /// <param name="userId">The ID of the user who wrote this comment</param>
-        /// <exception cref="IndexOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public ArticleCommentEntity(int note, string review, DateTime createdAt, DateTime updatedAt, 
             int articleId, string userId)
         {
-            if (note < 0 || note > 5) throw new IndexOutOfRangeException(nameof(note));
+            if (note < 0 || note > 5) throw new ArgumentOutOfRangeException(nameof(note));
             if (string.IsNullOrEmpty(review)) throw new ArgumentNullException(nameof(review));
-            if (articleId <= 0) throw new IndexOutOfRangeException(nameof(articleId));
+            if (articleId <= 0) throw new ArgumentOutOfRangeException(nameof(articleId));
             if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
 
             Id = 0;
