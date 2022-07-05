@@ -7,4 +7,5 @@ AS
 	INSERT INTO [Appointments]([StartAt], [EndAt], [Accepted], [UserId])
 	VALUES (@startsAt, @endsAt, @accepted, @userId);
 
-	SELECT SCOPE_IDENTITY()
+	SELECT SCOPE_IDENTITY();
+GO;
