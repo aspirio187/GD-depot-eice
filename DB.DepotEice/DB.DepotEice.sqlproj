@@ -66,7 +66,6 @@
   <ItemGroup>
     <None Include="PublishLocations\DepotEice_publish.xml" />
     <None Include="PublishLocations\DepotEice.publish.publish.xml" />
-    <None Include="dbo\StoredProcedures\spGetModules.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Users.sql" />
@@ -91,6 +90,12 @@
     <Build Include="dbo\Functions\fnHashPassword.sql" />
     <Build Include="dbo\StoredProcedures\spUpdateAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteAppointment.sql" />
+    <Build Include="dbo\StoredProcedures\spGetArticleComment.sql" />
+    <Build Include="dbo\StoredProcedures\spGetModule.sql" />
+    <Build Include="dbo\StoredProcedures\spGetModules.sql" />
+    <Build Include="dbo\StoredProcedures\spCreateModule.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateModule.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteModule.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
