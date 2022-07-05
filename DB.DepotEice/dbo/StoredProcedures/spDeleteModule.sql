@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spDeleteModule]
-	@id INT NOT NULL
+	@id INT
 AS
 	DELETE FROM [Modules]
 	WHERE [Modules].[Id] = @id

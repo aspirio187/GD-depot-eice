@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spGetArticleComment]
-	@id INT NOT NULL
+	@id INT
 AS
 	SELECT *
 	FROM [Appointments]

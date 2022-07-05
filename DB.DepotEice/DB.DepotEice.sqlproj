@@ -85,7 +85,7 @@
     <Build Include="dbo\StoredProcedures\spGetAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticleComments.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticle.sql" />
-    <Build Include="dbo\StoredProcedures\spUserMessages.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUserMessages.sql" />
     <Build Include="dbo\StoredProcedures\spCreateAppointment.sql" />
     <Build Include="dbo\Functions\fnHashPassword.sql" />
     <Build Include="dbo\StoredProcedures\spUpdateAppointment.sql" />

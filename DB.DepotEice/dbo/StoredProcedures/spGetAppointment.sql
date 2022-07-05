@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spGetAppointment]
-	@appointmentId int = 0
+	@id INT
 AS
 	SELECT * 
 	FROM [Appointments] 
-	WHERE [Appointments].[Id] = @appointmentId
+	WHERE [Appointments].[Id] = @id
 GO;

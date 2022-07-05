@@ -1,4 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[SpGetAppointments]
 AS
-	SELECT * From [Appointments]
+	SELECT *
+	FROM [Appointments]
 GO;

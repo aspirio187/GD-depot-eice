@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateModule]
-	@name NVARCHAR(255) NOT NULL,
-	@description NVARCHAR(1000) NOT NULL
+	@name NVARCHAR(255),
+	@description NVARCHAR(1000)
 AS
 	INSERT INTO [Modules]([Name], [Description])
 	VALUES (@name, @description);
