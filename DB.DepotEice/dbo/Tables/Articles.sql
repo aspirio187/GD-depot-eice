@@ -6,6 +6,6 @@
 	[CreatedAt] DATETIME NOT NULL,
 	[UpdatedAt] DATETIME NOT NULL,
 	[Pinned] BIT NOT NULL,
-	[UserId] NVARCHAR(36) NOT NULL,
+	[UserId] UNIQUEIDENTIFIER NOT NULL,
 	CONSTRAINT [FK_Articles_User] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id])
 )

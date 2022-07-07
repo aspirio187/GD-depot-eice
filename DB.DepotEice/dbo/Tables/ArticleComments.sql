@@ -6,7 +6,7 @@
 	[CreatedAt] DATETIME NOT NULL,
 	[UpdatedAt] DATETIME NOT NULL,
 	[ArticleId] INT NOT NULL,
-	[UserId] NVARCHAR(36) NOT NULL,
+	[UserId] UNIQUEIDENTIFIER NOT NULL,
 	CONSTRAINT [FK_ArticleComments_Article] FOREIGN KEY ([ArticleId]) REFERENCES [Articles]([Id]),
 	CONSTRAINT [FK_ArticleComments_User] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id])
 )

@@ -5,6 +5,6 @@
 	[Value] NVARCHAR(MAX) NOT NULL,
 	[DeliveryDate] DATETIME NOT NULL,
 	[ExpirationDate] DATETIME NOT NULL,
-	[UserId] NVARCHAR(36) NOT NULL,
+	[UserId] UNIQUEIDENTIFIER NOT NULL,
 	CONSTRAINT [FK_UsersTokens_User] FOREIGN KEY ([UserId]) REFERENCES [Users]([Id])
 )
