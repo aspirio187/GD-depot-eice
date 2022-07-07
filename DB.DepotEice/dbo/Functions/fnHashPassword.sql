@@ -1,10 +1,10 @@
 ﻿CREATE FUNCTION [dbo].[fnHashPassword]
 (
-	@param1 int,
-	@param2 int
+	@password NVARCHAR(25),
+	@salt NVARCHAR
 )
-RETURNS INT
+RETURNS BINARY(32)
 AS
 BEGIN
-	RETURN @param1 + @param2
+	RETURN HASBYTES('SHA2_256', CONCAT(@password, @salt))
 END
