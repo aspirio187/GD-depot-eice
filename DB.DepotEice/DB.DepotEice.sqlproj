@@ -97,6 +97,7 @@
     <Build Include="dbo\StoredProcedures\spUpdateModule.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteModule.sql" />
     <Build Include="dbo\StoredProcedures\spCreateUser.sql" />
+    <Build Include="dbo\StoredProcedures\spCreateArticleComment.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
