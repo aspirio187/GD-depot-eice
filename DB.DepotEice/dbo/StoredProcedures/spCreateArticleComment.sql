@@ -21,4 +21,6 @@ BEGIN
 		@articleId,
 		@userId
 	);
+
+	SELECT SCOPE_IDENTITY();
 END
