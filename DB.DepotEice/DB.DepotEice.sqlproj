@@ -103,6 +103,7 @@
     <Build Include="dbo\StoredProcedures\spCreateOpeningHour.sql" />
     <Build Include="dbo\StoredProcedures\spCreateRole.sql" />
     <Build Include="dbo\StoredProcedures\spCreateScheduleFile.sql" />
+    <Build Include="dbo\StoredProcedures\spCreateSchedule.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
