@@ -1,11 +1,23 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateAppointment]
 	@startsAt DATETIME,
 	@endsAt DATETIME,
-	@accepted BIT,
 	@userId NVARCHAR(36)
 AS
-	INSERT INTO [Appointments]([StartAt], [EndAt], [Accepted], [UserId])
-	VALUES (@startsAt, @endsAt, @accepted, @userId);
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO [dbo].[Appointments]
+	(
+		[StartAt],
+		[EndAt],
+		[UserId]
+	)
+	VALUES 
+	(
+		@startsAt,
+		@endsAt,
+		@userId
+	);
 
 	SELECT SCOPE_IDENTITY();
-GO;
+END
