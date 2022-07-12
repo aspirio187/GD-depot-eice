@@ -20,12 +20,12 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// Appointment start date and time (hh:mm)
         /// </summary>
-        public DateTime StartsAt { get; set; }
+        public DateTime StartAt { get; set; }
 
         /// <summary>
         /// Appointment end date and time (hh:mm)
         /// </summary>
-        public DateTime EndsAt { get; set; }
+        public DateTime EndAt { get; set; }
 
         /// <summary>
         /// Appointment acceptance status <c>true = Accepted</c> <c>false = Not accepted</c>
@@ -51,20 +51,31 @@ namespace API.DepotEice.DAL.Entities
         public AppointmentEntity(int id, DateTime startsAt, DateTime endsAt, bool accepted,
             string userId)
         {
-            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
-            if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
-            if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (id <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (startsAt >= endsAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(startsAt));
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
 
             Id = id;
-            StartsAt = startsAt;
-            EndsAt = endsAt;
+            StartAt = startsAt;
+            EndAt = endsAt;
             Accepted = accepted;
             UserId = userId;
         }
 
         /// <summary>
-        /// Instanciate an object <see cref="AppointmentEntity"/> for a creation 
-        /// <see cref="Id"/>
+        /// Instanciate an object <see cref="AppointmentEntity"/> for a creation in the database.
+        /// The constructor is useful for the Stored Procedure <c>spCreateAppointment</c>
         /// </summary>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
         /// <param name="endsAt">Date and time at which ends the appointment</param>
@@ -84,8 +95,8 @@ namespace API.DepotEice.DAL.Entities
             }
 
             Id = 0;
-            StartsAt = startsAt;
-            EndsAt = endsAt;
+            StartAt = startsAt;
+            EndAt = endsAt;
             UserId = userId;
         }
     }
