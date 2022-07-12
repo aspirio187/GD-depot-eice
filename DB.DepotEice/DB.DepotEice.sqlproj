@@ -110,6 +110,7 @@
     <Build Include="dbo\StoredProcedures\spDeleteArticleComment.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteArticle.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteOpeningHours.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteRole.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
