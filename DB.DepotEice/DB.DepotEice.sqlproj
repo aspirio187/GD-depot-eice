@@ -107,6 +107,7 @@
     <Build Include="dbo\StoredProcedures\spAddUserToModule.sql" />
     <Build Include="dbo\StoredProcedures\spAddUserToRole.sql" />
     <Build Include="dbo\StoredProcedures\spCreateUserToken.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteArticleComment.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
