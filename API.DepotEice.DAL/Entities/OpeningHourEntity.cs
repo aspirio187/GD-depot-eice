@@ -10,7 +10,7 @@ namespace API.DepotEice.DAL.Entities
     /// <summary>
     /// Represent the <c>OpeningHours</c> table in the database
     /// </summary>
-    public class OpeningHourEntity
+    public class OpeningHoursEntity
     {
         /// <summary>
         /// Represent the <c>Id</c> column in the database
@@ -28,14 +28,14 @@ namespace API.DepotEice.DAL.Entities
         public DateTime CloseAt { get; set; }
 
         /// <summary>
-        /// Instanciate an object <see cref="OpeningHourEntity"/> with all its properties
+        /// Instanciate an object <see cref="OpeningHoursEntity"/> with all its properties
         /// </summary>
         /// <param name="id">Opening hour's id</param>
         /// <param name="openAt">Opening date and time</param>
         /// <param name="closeAt">Closing date and time</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public OpeningHourEntity(int id, DateTime openAt, DateTime closeAt)
+        public OpeningHoursEntity(int id, DateTime openAt, DateTime closeAt)
         {
             if (id <= 0)
             {
@@ -58,13 +58,13 @@ namespace API.DepotEice.DAL.Entities
         }
 
         /// <summary>
-        /// Instanciate an object <see cref="OpeningHourEntity"/> with all its properties except
+        /// Instanciate an object <see cref="OpeningHoursEntity"/> with all its properties except
         /// <see cref="Id"/> that is set to 0
         /// </summary>
         /// <param name="openAt">Opening date and time</param>
         /// <param name="closeAt">Closing date and time</param>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public OpeningHourEntity(DateTime openAt, DateTime closeAt)
+        public OpeningHoursEntity(DateTime openAt, DateTime closeAt)
         {
             if (openAt >= closeAt)
             {

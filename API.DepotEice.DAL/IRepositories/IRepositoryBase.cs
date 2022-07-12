@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API.DepotEice.DAL.IRepositories
 {
-    internal interface IRepositoryBase<TEntity, TKey>
+    public interface IRepositoryBase<TEntity, TKey>
         where TEntity : class
     {
         IEnumerable<TEntity> GetAll();

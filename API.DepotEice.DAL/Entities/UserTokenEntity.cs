@@ -10,30 +10,30 @@ namespace API.DepotEice.DAL.Entities
     /// <summary>
     /// Represent the <c>UserToken</c> table in the database
     /// </summary>
-    public class UserToken
+    public class UserTokenEntity
     {
         /// <summary>
-        /// <see cref="UserToken"/>'s ID
+        /// <see cref="UserTokenEntity"/>'s ID
         /// </summary>
         public string Id { get; set; }
 
         /// <summary>
-        /// <see cref="UserToken"/>'s type
+        /// <see cref="UserTokenEntity"/>'s type
         /// </summary>
         public string Type { get; set; }
 
         /// <summary>
-        /// <see cref="UserToken"/>'s value
+        /// <see cref="UserTokenEntity"/>'s value
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
-        /// <see cref="UserToken"/>'s delivery date and time
+        /// <see cref="UserTokenEntity"/>'s delivery date and time
         /// </summary>
         public DateTime DeliveryDateTime { get; set; }
 
         /// <summary>
-        /// <see cref="UserToken"/>'s expiration date and time
+        /// <see cref="UserTokenEntity"/>'s expiration date and time
         /// </summary>
         public DateTime ExpirationDateTime { get; set; }
 
@@ -43,7 +43,7 @@ namespace API.DepotEice.DAL.Entities
         public string UserId { get; set; }
 
         /// <summary>
-        /// Instanciate an object <see cref="UserToken"/> with all its properties
+        /// Instanciate an object <see cref="UserTokenEntity"/> with all its properties
         /// </summary>
         /// <param name="id">Token's id</param>
         /// <param name="type">Token type</param>
@@ -52,7 +52,7 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="expirationDateTime">Token's expiration date and time</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public UserToken(string id, string type, string value, DateTime deliveryDateTime,
+        public UserTokenEntity(string id, string type, string value, DateTime deliveryDateTime,
             DateTime expirationDateTime, string userId)
         {
             if (string.IsNullOrEmpty(id))
@@ -94,7 +94,7 @@ namespace API.DepotEice.DAL.Entities
         }
 
         /// <summary>
-        /// Instanciate an object <see cref="UserToken"/> with all its property except for 
+        /// Instanciate an object <see cref="UserTokenEntity"/> with all its property except for 
         /// <see cref="Id"/> and <see cref="DeliveryDateTime"/> that are generated
         /// </summary>
         /// <param name="type">Token's type</param>
@@ -103,7 +103,7 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="userId">The id of the user related to this token</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public UserToken(string type, string value, DateTime expirationDatetime, string userId)
+        public UserTokenEntity(string type, string value, DateTime expirationDatetime, string userId)
         {
             if (string.IsNullOrEmpty(type))
             {

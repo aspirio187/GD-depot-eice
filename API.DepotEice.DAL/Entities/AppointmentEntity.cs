@@ -63,24 +63,29 @@ namespace API.DepotEice.DAL.Entities
         }
 
         /// <summary>
-        /// Instanciate an object <see cref="AppointmentEntity"/> without specifying 
+        /// Instanciate an object <see cref="AppointmentEntity"/> for a creation 
         /// <see cref="Id"/>
         /// </summary>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
         /// <param name="endsAt">Date and time at which ends the appointment</param>
-        /// <param name="accepted">Appointment acceptance flag</param>
         /// <param name="userId">Linked user's ID</param>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public AppointmentEntity(DateTime startsAt, DateTime endsAt, bool accepted, string userId)
+        public AppointmentEntity(DateTime startsAt, DateTime endsAt, string userId)
         {
-            if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
-            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (startsAt >= endsAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(startsAt));
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
 
             Id = 0;
             StartsAt = startsAt;
             EndsAt = endsAt;
-            Accepted = accepted;
             UserId = userId;
         }
     }

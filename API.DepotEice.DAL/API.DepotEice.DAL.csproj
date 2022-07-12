@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevHopTools" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DepotEice.Shared\DepotEice.Shared.csproj" />
   </ItemGroup>
 
