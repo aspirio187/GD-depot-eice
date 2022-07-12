@@ -88,7 +88,6 @@
     <Build Include="dbo\StoredProcedures\spGetUserMessages.sql" />
     <Build Include="dbo\StoredProcedures\spCreateAppointment.sql" />
     <Build Include="dbo\Functions\fnHashPassword.sql" />
-    <Build Include="dbo\StoredProcedures\spUpdateAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticleComment.sql" />
     <Build Include="dbo\StoredProcedures\spGetModule.sql" />
@@ -117,6 +116,18 @@
     <Build Include="dbo\StoredProcedures\spDeleteUserModule.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteUserRole.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteUserToken.sql" />
+    <Build Include="dbo\StoredProcedures\spAcceptAppointment.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateArticleComment.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateArticle.sql" />
+    <Build Include="dbo\StoredProcedures\spPinArticle.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateOpeningHours.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateRole.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateSchedule.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateScheduleHours.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateUserInformations.sql" />
+    <Build Include="dbo\StoredProcedures\spUpdateUserPassword.sql" />
+    <Build Include="dbo\StoredProcedures\spActivateUser.sql" />
+    <Build Include="dbo\Functions\fnCreateUserTokenValue.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />

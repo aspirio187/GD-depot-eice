@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateUserToken]
 	@type NVARCHAR(100),
-	@value NVARCHAR(MAX),
 	@expirationDate DATETIME2,
-	@userId UNIQUEIDENTIFIER
+	@userId UNIQUEIDENTIFIER,
+	@userSecurityStamp UNIQUEIDENTIFIER
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -18,7 +18,7 @@ BEGIN
 	VALUES
 	(
 		@type,
-		@value,
+		[dbo].[fnCreateUserTokenValue](@userSecurityStamp, @type),
 		@expirationDate,
 		@userId
 	);
