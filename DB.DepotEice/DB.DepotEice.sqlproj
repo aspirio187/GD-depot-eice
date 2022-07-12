@@ -100,7 +100,7 @@
     <Build Include="dbo\StoredProcedures\spCreateArticleComment.sql" />
     <Build Include="dbo\StoredProcedures\spCreateArticle.sql" />
     <Build Include="dbo\StoredProcedures\spCreateMessage.sql" />
-    <Build Include="dbo\StoredProcedures\spCreateOpeningHour.sql" />
+    <Build Include="dbo\StoredProcedures\spCreateOpeningHours.sql" />
     <Build Include="dbo\StoredProcedures\spCreateRole.sql" />
     <Build Include="dbo\StoredProcedures\spCreateScheduleFile.sql" />
     <Build Include="dbo\StoredProcedures\spCreateSchedule.sql" />
@@ -109,7 +109,7 @@
     <Build Include="dbo\StoredProcedures\spCreateUserToken.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteArticleComment.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteArticle.sql" />
-    <Build Include="dbo\StoredProcedures\spDeleteOpeningHour.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteOpeningHours.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
