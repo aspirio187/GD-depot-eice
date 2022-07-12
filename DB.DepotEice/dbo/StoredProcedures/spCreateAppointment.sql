@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateAppointment]
-	@startsAt DATETIME,
-	@endsAt DATETIME,
+	@startAT DATETIME,
+	@endAt DATETIME,
 	@userId NVARCHAR(36)
 AS
 BEGIN
@@ -14,8 +14,8 @@ BEGIN
 	)
 	VALUES 
 	(
-		@startsAt,
-		@endsAt,
+		@startAt,
+		@endAt,
 		@userId
 	);
 
