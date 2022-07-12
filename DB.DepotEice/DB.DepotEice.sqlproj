@@ -111,6 +111,12 @@
     <Build Include="dbo\StoredProcedures\spDeleteArticle.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteOpeningHours.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteRole.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteScheduleFile.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteSchedule.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteUser.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteUserModule.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteUserRole.sql" />
+    <Build Include="dbo\StoredProcedures\spDeleteUserToken.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />
