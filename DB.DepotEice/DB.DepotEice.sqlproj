@@ -128,6 +128,20 @@
     <Build Include="dbo\StoredProcedures\spUpdateUserPassword.sql" />
     <Build Include="dbo\StoredProcedures\spActivateUser.sql" />
     <Build Include="dbo\Functions\fnCreateUserTokenValue.sql" />
+    <Build Include="dbo\StoredProcedures\spGetArticles.sql" />
+    <Build Include="dbo\StoredProcedures\spGetOpeningHours.sql" />
+    <Build Include="dbo\StoredProcedures\spGetRole.sql" />
+    <Build Include="dbo\StoredProcedures\spGetScheduleFile.sql" />
+    <Build Include="dbo\StoredProcedures\spGetScheduleFiles.sql" />
+    <Build Include="dbo\StoredProcedures\spGetSchedule.sql" />
+    <Build Include="dbo\StoredProcedures\spGetModuleSchedules.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUser.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUsers.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUserModules.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUserRoles.sql" />
+    <Build Include="dbo\StoredProcedures\spGetRoles.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUserToken.sql" />
+    <Build Include="dbo\StoredProcedures\spGetUserTokens.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB.DepotEice.refactorlog" />

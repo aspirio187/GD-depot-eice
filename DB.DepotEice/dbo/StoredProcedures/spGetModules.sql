@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spGetModules]
 AS
 	SELECT *
-	FROM [Modules]
-GO;
+	FROM [dbo].[Modules]
+GO

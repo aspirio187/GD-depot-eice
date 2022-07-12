@@ -2,6 +2,6 @@
 	@id INT
 AS
 	SELECT *
-	FROM [Modules]
+	FROM [dbo].[Modules]
 	WHERE [Modules].[Id] = @id
-GO;
+GO

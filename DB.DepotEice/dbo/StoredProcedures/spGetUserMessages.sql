@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spUserMessages]
-	@userId NVARCHAR(36)
+	@userId UNIQUEIDENTIFIER
 AS
 	SELECT *
 	FROM [Messages]
-	WHERE [Messages].[UserToId] = @userId OR [Messages].[UserFromId] = @userId
-GO;
+	WHERE ([UserToId] = @userId) OR ([UserFromId] = @userId)
+GO
