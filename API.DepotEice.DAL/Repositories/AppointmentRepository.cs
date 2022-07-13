@@ -84,7 +84,7 @@ namespace API.DepotEice.DAL.Repositories
 
             string? scalarResult = _connection.ExecuteScalar(command).ToString();
 
-            if (scalarResult is null)
+            if (string.IsNullOrEmpty(scalarResult))
             {
                 throw new DatabaseScalarNullException(nameof(scalarResult));
             }
