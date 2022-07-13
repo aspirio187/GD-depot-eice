@@ -10,7 +10,7 @@ namespace API.DepotEice.DAL.IRepositories
         where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
-        TEntity GetByKey(TKey key);
+        TEntity? GetByKey(TKey key);
         TKey Create(TEntity entity);
         bool Update(TEntity entity);
         bool Delete(TEntity entity);
