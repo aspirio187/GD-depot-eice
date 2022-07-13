@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spUpdateSchedule]
 	@id INT,
 	@title NVARCHAR(100),
-	@details NVARCHAR(MAX)
+	@details TEXT
 AS
 	UPDATE
 		[dbo].[Schedules]

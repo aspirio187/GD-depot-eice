@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spUpdateArticle]
 	@id INT,
 	@title NVARCHAR(100),
-	@body NVARCHAR(MAX)
+	@body TEXT
 AS
 	UPDATE [dbo].[Articles]
 	SET

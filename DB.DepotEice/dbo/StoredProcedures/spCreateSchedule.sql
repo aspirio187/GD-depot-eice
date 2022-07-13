@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateSchedule]
 	@title NVARCHAR(100) NULL,
-	@details NVARCHAR(MAX) NULL,
+	@details TEXT NULL,
 	@startsAt DATETIME2,
 	@endsAt DATETIME2,
 	@moduleId INT

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateArticle]
 	@title NVARCHAR(100),
-	@body NVARCHAR(MAX),
+	@body TEXT,
 	@pinned BIT,
 	@userId UNIQUEIDENTIFIER
 AS
