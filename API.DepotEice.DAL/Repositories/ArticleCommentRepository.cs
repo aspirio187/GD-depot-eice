@@ -110,7 +110,7 @@ namespace API.DepotEice.DAL.Repositories
         /// <returns>
         /// An <see cref="IEnumerable{T}"/> of <see cref="ArticleCommentEntity"/>
         /// </returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public IEnumerable<ArticleCommentEntity> GetArticleComments(int articleId)
         {
             if (articleId <= 0)
@@ -137,7 +137,7 @@ namespace API.DepotEice.DAL.Repositories
         /// <c>null</c> If there is no return value or if the returned value is not unique. 
         /// <see cref="ArticleCommentEntity"/> Otherwise
         /// </returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public ArticleCommentEntity? GetByKey(int key)
         {
             if (key <= 0)
@@ -164,7 +164,7 @@ namespace API.DepotEice.DAL.Repositories
         /// <returns>
         /// <c>true</c> If one or more record were modified. <c>false</c> Otherwise
         /// </returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public bool Update(ArticleCommentEntity entity)
         {
             if (entity is null)

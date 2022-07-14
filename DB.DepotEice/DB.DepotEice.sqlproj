@@ -81,7 +81,6 @@
     <Build Include="dbo\Tables\Articles.sql" />
     <Build Include="dbo\Tables\ArticleComments.sql" />
     <Build Include="dbo\Tables\Messages.sql" />
-    <Build Include="dbo\StoredProcedures\SpGetAppointments.sql" />
     <Build Include="dbo\StoredProcedures\spGetAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticleComments.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticle.sql" />
@@ -91,7 +90,6 @@
     <Build Include="dbo\StoredProcedures\spDeleteAppointment.sql" />
     <Build Include="dbo\StoredProcedures\spGetArticleComment.sql" />
     <Build Include="dbo\StoredProcedures\spGetModule.sql" />
-    <Build Include="dbo\StoredProcedures\spGetModules.sql" />
     <Build Include="dbo\StoredProcedures\spCreateModule.sql" />
     <Build Include="dbo\StoredProcedures\spUpdateModule.sql" />
     <Build Include="dbo\StoredProcedures\spDeleteModule.sql" />
@@ -128,18 +126,14 @@
     <Build Include="dbo\StoredProcedures\spUpdateUserPassword.sql" />
     <Build Include="dbo\StoredProcedures\spActivateUser.sql" />
     <Build Include="dbo\Functions\fnCreateUserTokenValue.sql" />
-    <Build Include="dbo\StoredProcedures\spGetArticles.sql" />
-    <Build Include="dbo\StoredProcedures\spGetOpeningHours.sql" />
     <Build Include="dbo\StoredProcedures\spGetRole.sql" />
     <Build Include="dbo\StoredProcedures\spGetScheduleFile.sql" />
     <Build Include="dbo\StoredProcedures\spGetScheduleFiles.sql" />
     <Build Include="dbo\StoredProcedures\spGetSchedule.sql" />
     <Build Include="dbo\StoredProcedures\spGetModuleSchedules.sql" />
     <Build Include="dbo\StoredProcedures\spGetUser.sql" />
-    <Build Include="dbo\StoredProcedures\spGetUsers.sql" />
     <Build Include="dbo\StoredProcedures\spGetUserModules.sql" />
     <Build Include="dbo\StoredProcedures\spGetUserRoles.sql" />
-    <Build Include="dbo\StoredProcedures\spGetRoles.sql" />
     <Build Include="dbo\StoredProcedures\spGetUserToken.sql" />
     <Build Include="dbo\StoredProcedures\spGetUserTokens.sql" />
   </ItemGroup>

@@ -123,7 +123,7 @@ namespace API.DepotEice.DAL.Repositories
         /// </returns>
         public IEnumerable<AppointmentEntity> GetAll()
         {
-            Command command = new Command("spGetAppointments", true);
+            Command command = new Command("SELECT * FROM [dbo].[Appointments]");
 
             return _connection.ExecuteReader(command,
                 appointment => _mapper.Map<AppointmentEntity>(appointment));

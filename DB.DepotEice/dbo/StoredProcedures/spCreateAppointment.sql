@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateAppointment]
-	@startAT DATETIME,
+	@startAt DATETIME,
 	@endAt DATETIME,
 	@userId NVARCHAR(36)
 AS
