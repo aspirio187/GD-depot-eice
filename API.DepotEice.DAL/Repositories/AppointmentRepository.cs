@@ -58,17 +58,6 @@ namespace API.DepotEice.DAL.Repositories
             return _connection.ExecuteNonQuery(command) > 0;
         }
 
-        /// <summary>
-        /// Create a new record in the database
-        /// </summary>
-        /// <param name="entity">
-        /// The record to create. Throws a <see cref="ArgumentNullException"/> if it is <c>null</c>
-        /// </param>
-        /// <returns>
-        /// The ID of the newly created record in the database. Otherwise return 0
-        /// </returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="DatabaseScalarNullException"></exception>
         public int Create(AppointmentEntity entity)
         {
             if (entity is null)
