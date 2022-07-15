@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spAddUserToModule]
-	@userId UNIQUEIDENTIFIER,
-	@moduleId INT
+	@moduleId INT,
+	@userId UNIQUEIDENTIFIER
 AS
 BEGIN
 	SET NOCOUNT ON;

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spDeleteUserModule]
-	@userId UNIQUEIDENTIFIER,
-	@moduleId INT
+	@moduleId INT,
+	@userId UNIQUEIDENTIFIER
 AS
 	DELETE FROM [dbo].[UsersModules]
 	WHERE ([UserId] = @userId) AND ([ModuleId] = @moduleId)
