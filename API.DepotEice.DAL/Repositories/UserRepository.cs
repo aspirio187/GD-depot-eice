@@ -60,17 +60,7 @@ namespace API.DepotEice.DAL.Repositories
             return _connection.ExecuteNonQuery(command) > 0;
         }
 
-        // TODO : Modifiy the property PasswordHash from UserEntity and retrieve the Salt from the
-        // project
-        /// <summary>
-        /// Create a <see cref="UserEntity"/> record in the database
-        /// </summary>
-        /// <param name="entity">
-        /// The <see cref="UserEntity"/> to create
-        /// </param>
-        /// <returns>
-        /// Return the newly created <see cref="UserEntity.Id"/>
-        /// </returns>
+        /// <inheritdoc/>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DatabaseScalarNullException"></exception>
         public string Create(UserEntity entity)
@@ -100,16 +90,7 @@ namespace API.DepotEice.DAL.Repositories
             return scalarResult;
         }
 
-        /// <summary>
-        /// Delete a <see cref="UserEntity"/> by settings <see cref="UserEntity.DeletedAt"/>
-        /// </summary>
-        /// <param name="entity">
-        /// The <see cref="UserEntity"/> to delete
-        /// </param>
-        /// <returns>
-        /// <c>true</c> If <see cref="UserEntity"/> has correctly been updated. <c>false</c> 
-        /// Otherwise
-        /// </returns>
+        /// <inheritdoc/>
         /// <exception cref="ArgumentNullException"></exception>
         public bool Delete(UserEntity entity)
         {
@@ -125,13 +106,6 @@ namespace API.DepotEice.DAL.Repositories
             return _connection.ExecuteNonQuery(command) > 0;
         }
 
-        /// <summary>
-        /// Retrieve all <see cref="UserEntity"/> records from the database
-        /// </summary>
-        /// <returns>
-        /// An <see cref="IEnumerable{T}"/> of <see cref="UserEntity"/>. If no data is found,
-        /// returns an empty <see cref="IEnumerable{T}"/>
-        /// </returns>
         public IEnumerable<UserEntity> GetAll()
         {
             string query = "SELECT * FROM [dbo].[Users]";
@@ -141,16 +115,7 @@ namespace API.DepotEice.DAL.Repositories
             return _connection.ExecuteReader(command, user => _mapper.Map<UserEntity>(user));
         }
 
-        /// <summary>
-        /// Retrieve a <see cref="UserEntity"/> from the database
-        /// </summary>
-        /// <param name="key">
-        /// The ID of the <see cref="UserEntity"/> to retrieve
-        /// </param>
-        /// <returns>
-        /// <c>null</c> If there is no record in the database with <paramref name="key"/>. A
-        /// <see cref="UserEntity"/> otherwise
-        /// </returns>
+        /// <inheritdoc/>
         /// <exception cref="ArgumentNullException"></exception>
         public UserEntity? GetByKey(string key)
         {
@@ -168,16 +133,7 @@ namespace API.DepotEice.DAL.Repositories
                 .SingleOrDefault();
         }
 
-        /// <summary>
-        /// Update the soft informations (first name, last name, profile picture, birthdate) of a 
-        /// <see cref="UserEntity"/> record in the database
-        /// </summary>
-        /// <param name="entity">
-        /// The <see cref="UserEntity"/> to update
-        /// </param>
-        /// <returns>
-        /// <c>true</c> If the record has successfully been updated. <c>false</c> Otherwise
-        /// </returns>
+        /// <inheritdoc/>
         /// <exception cref="ArgumentNullException"></exception>
         public bool Update(UserEntity entity)
         {
