@@ -48,8 +48,8 @@ namespace API.DepotEice.DAL.Repositories
             Command command = new Command("spCreateMessage", true);
 
             command.AddParameter("body", entity.Body);
-            command.AddParameter("userFromId", entity.UserFromId);
-            command.AddParameter("userToId", entity.UserToId);
+            command.AddParameter("userFromId", entity.SenderId);
+            command.AddParameter("userToId", entity.ReceiverId);
 
             string? scalarResult = _connection.ExecuteScalar(command).ToString();
 
