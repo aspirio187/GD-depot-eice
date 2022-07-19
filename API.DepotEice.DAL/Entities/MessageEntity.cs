@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace API.DepotEice.DAL.Entities
+﻿namespace API.DepotEice.DAL.Entities
 {
     /// <summary>
     /// Represent the <c>Messages</c> table in the database
@@ -19,58 +13,58 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// <see cref="MessageEntity"/>'s content
         /// </summary>
-        public string Body { get; set; }
+        public string Content { get; set; }
 
         /// <summary>
         /// ID of <see cref="UserEntity"/> sending the message
         /// </summary>
-        public string UserFromId { get; set; }
+        public string SenderId { get; set; }
 
         /// <summary>
         /// ID of <see cref="UserEntity"/> receving the message
         /// </summary>
-        public string UserToId { get; set; }
-        
+        public string ReceiverId { get; set; }
+
         /// <summary>
         /// Instanciate an object <see cref="MessageEntity"/> and initialize all its properties
         /// </summary>
         /// <param name="id">Message's ID</param>
-        /// <param name="body">The content of the message</param>
-        /// <param name="userFromId">The ID of the user sending the message</param>
-        /// <param name="userToId">The ID of the user receiving the message</param>
+        /// <param name="content">The content of the message</param>
+        /// <param name="senderId">The ID of the user sending the message</param>
+        /// <param name="receiverId">The ID of the user receiving the message</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public MessageEntity(int id, string body, string userFromId, string userToId)
+        public MessageEntity(int id, string content, string senderId, string receiverId)
         {
             if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
-            if (string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
-            if (string.IsNullOrEmpty(userFromId)) throw new ArgumentNullException(nameof(userFromId));
-            if (string.IsNullOrEmpty(userToId)) throw new ArgumentNullException(nameof(userToId));
+            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
+            if (string.IsNullOrEmpty(senderId)) throw new ArgumentNullException(nameof(senderId));
+            if (string.IsNullOrEmpty(receiverId)) throw new ArgumentNullException(nameof(receiverId));
 
             Id = id;
-            Body = body;
-            UserFromId = userFromId;
-            UserToId = userToId;
+            Content = content;
+            SenderId = senderId;
+            ReceiverId = receiverId;
         }
 
         /// <summary>
         /// Instanciate an object <see cref="MessageEntity"/> and initialize all its properties
         /// except the <see cref="Id"/>
         /// </summary>
-        /// <param name="body">The content of the message</param>
-        /// <param name="userFromId">The ID of the user sending the message</param>
-        /// <param name="userToId">The ID of the user receiving the message</param>
+        /// <param name="content">The content of the message</param>
+        /// <param name="senderId">The ID of the user sending the message</param>
+        /// <param name="receiverId">The ID of the user receiving the message</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public MessageEntity(string body, string userFromId, string userToId)
+        public MessageEntity(string content, string senderId, string receiverId)
         {
-            if (string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
-            if (string.IsNullOrEmpty(userFromId)) throw new ArgumentNullException(nameof(userFromId));
-            if (string.IsNullOrEmpty(userToId)) throw new ArgumentNullException(nameof(userToId));
+            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
+            if (string.IsNullOrEmpty(senderId)) throw new ArgumentNullException(nameof(senderId));
+            if (string.IsNullOrEmpty(receiverId)) throw new ArgumentNullException(nameof(receiverId));
 
             Id = 0;
-            Body = body;
-            UserFromId = userFromId;
-            UserToId = userToId;
+            Content = content;
+            SenderId = senderId;
+            ReceiverId = receiverId;
         }
     }
 }
