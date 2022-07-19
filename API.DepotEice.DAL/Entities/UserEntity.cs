@@ -30,7 +30,7 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// Represent <c>Users</c> table's <c>PasswordHash</c> column
         /// </summary>
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Represent <c>Users</c> table's <c>Salt</c> column
@@ -68,6 +68,11 @@ namespace API.DepotEice.DAL.Entities
         public string SecurityStamp { get; set; }
 
         /// <summary>
+        /// Represent <c>Users</c> table's <c>IsActive</c> column
+        /// </summary>
+        public bool IsActive { get; set; }
+
+        /// <summary>
         /// Represent <c>Users</c> table's <c>CreatedAt</c> column
         /// </summary>
         public DateTime CreatedAt { get; set; }
@@ -89,7 +94,7 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="email">User's email</param>
         /// <param name="normalizedEmail">User's normalized email (<paramref name="email"/> in 
         /// uppercase)</param>
-        /// <param name="passwordHash">User's password hash</param>
+        /// <param name="password">User's password hash</param>
         /// <param name="salt">App's default salt</param>
         /// <param name="firstName">User's first name</param>
         /// <param name="lastName">User's last name</param>
@@ -105,10 +110,10 @@ namespace API.DepotEice.DAL.Entities
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public UserEntity(string id, string email, string normalizedEmail, string passwordHash,
+        public UserEntity(string id, string email, string normalizedEmail, string password,
             string salt, string firstName, string lastName, string profilePicture,
-            DateOnly birthDate, string concurrencyStamp, string securityStamp, DateTime createdAt,
-            DateTime? updatedAt, DateTime? deletedAt)
+            DateOnly birthDate, string concurrencyStamp, string securityStamp, bool isActive,
+            DateTime createdAt, DateTime? updatedAt, DateTime? deletedAt)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -125,9 +130,9 @@ namespace API.DepotEice.DAL.Entities
                 throw new ArgumentNullException(nameof(normalizedEmail));
             }
 
-            if (string.IsNullOrEmpty(passwordHash))
+            if (string.IsNullOrEmpty(password))
             {
-                throw new ArgumentNullException(nameof(passwordHash));
+                throw new ArgumentNullException(nameof(password));
             }
 
             if (string.IsNullOrEmpty(salt))
@@ -191,7 +196,7 @@ namespace API.DepotEice.DAL.Entities
             Id = id;
             Email = email;
             NormalizedEmail = normalizedEmail;
-            PasswordHash = passwordHash;
+            Password = password;
             Salt = salt;
             FirstName = firstName;
             LastName = lastName;
@@ -199,6 +204,7 @@ namespace API.DepotEice.DAL.Entities
             BirthDate = birthDate;
             ConcurrencyStamp = concurrencyStamp;
             SecurityStamp = securityStamp;
+            IsActive = isActive;
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
             DeletedAt = deletedAt;
@@ -260,6 +266,7 @@ namespace API.DepotEice.DAL.Entities
             Id = Guid.NewGuid().ToString();
             Email = email;
             NormalizedEmail = email.ToUpper();
+            Password = password;
             Salt = salt;
             // TODO : Hash password here or in the database ?
             FirstName = firstName;
@@ -268,6 +275,7 @@ namespace API.DepotEice.DAL.Entities
             BirthDate = birthDate;
             ConcurrencyStamp = Guid.NewGuid().ToString();
             SecurityStamp = Guid.NewGuid().ToString();
+            IsActive = false;
             CreatedAt = DateTime.Now;
         }
     }

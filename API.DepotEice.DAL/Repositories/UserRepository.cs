@@ -83,8 +83,8 @@ namespace API.DepotEice.DAL.Repositories
             Command command = new Command("spCreateUser", true);
 
             command.AddParameter("email", entity.Email);
-            command.AddParameter("password", entity.PasswordHash);
-            command.AddParameter("salt", "salt");
+            command.AddParameter("password", entity.Password);
+            command.AddParameter("salt", entity.Salt);
             command.AddParameter("firstName", entity.FirstName);
             command.AddParameter("lastName", entity.LastName);
             command.AddParameter("profilePicture", entity.ProfilePicture);
@@ -198,7 +198,7 @@ namespace API.DepotEice.DAL.Repositories
         }
 
         /// <summary>
-        /// Update a <see cref="UserEntity"/> record's <see cref="UserEntity.PasswordHash"/> 
+        /// Update a <see cref="UserEntity"/> record's <see cref="UserEntity.Password"/> 
         /// property
         /// </summary>
         /// <param name="id">

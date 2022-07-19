@@ -25,7 +25,7 @@ namespace API.DepotEice.DAL.IRepositories
         bool ActivateUser(string id, bool isActive);
 
         /// <summary>
-        /// Update <see cref="UserEntity.PasswordHash"/> column in the database
+        /// Update <see cref="UserEntity.Password"/> column in the database
         /// </summary>
         /// <param name="id"><see cref="UserEntity.Id"/>'s value</param>
         /// <param name="oldPassword">User's old password</param>
