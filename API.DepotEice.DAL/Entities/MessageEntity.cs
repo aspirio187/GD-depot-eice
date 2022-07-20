@@ -36,10 +36,25 @@
         /// <exception cref="ArgumentNullException"></exception>
         public MessageEntity(int id, string content, string senderId, string receiverId)
         {
-            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
-            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
-            if (string.IsNullOrEmpty(senderId)) throw new ArgumentNullException(nameof(senderId));
-            if (string.IsNullOrEmpty(receiverId)) throw new ArgumentNullException(nameof(receiverId));
+            if (id <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (string.IsNullOrEmpty(content))
+            {
+                throw new ArgumentNullException(nameof(content));
+            }
+
+            if (string.IsNullOrEmpty(senderId))
+            {
+                throw new ArgumentNullException(nameof(senderId));
+            }
+
+            if (string.IsNullOrEmpty(receiverId))
+            {
+                throw new ArgumentNullException(nameof(receiverId));
+            }
 
             Id = id;
             Content = content;
@@ -57,9 +72,20 @@
         /// <exception cref="ArgumentNullException"></exception>
         public MessageEntity(string content, string senderId, string receiverId)
         {
-            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
-            if (string.IsNullOrEmpty(senderId)) throw new ArgumentNullException(nameof(senderId));
-            if (string.IsNullOrEmpty(receiverId)) throw new ArgumentNullException(nameof(receiverId));
+            if (string.IsNullOrEmpty(content))
+            {
+                throw new ArgumentNullException(nameof(content));
+            }
+
+            if (string.IsNullOrEmpty(senderId))
+            {
+                throw new ArgumentNullException(nameof(senderId));
+            }
+
+            if (string.IsNullOrEmpty(receiverId))
+            {
+                throw new ArgumentNullException(nameof(receiverId));
+            }
 
             Id = 0;
             Content = content;
