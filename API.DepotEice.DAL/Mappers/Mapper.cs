@@ -58,12 +58,10 @@ namespace API.DepotEice.DAL.Mappers
 
         public static OpeningHoursEntity DbToOpeningHours(this IDataRecord record)
         {
-            return new OpeningHoursEntity()
-            {
-                Id = (int)record["Id"],
-                OpenAt = (DateTime)record["OpenAt"],
-                CloseAt = (DateTime)record["CloseAt"]
-            };
+            return new OpeningHoursEntity(
+                id: (int)record["Id"],
+                openAt: (DateTime)record["OpenAt"],
+                closeAt: (DateTime)record["CloseAt"]);
         }
 
         public static RoleEntity DbToRole(this IDataRecord record)
@@ -92,22 +90,6 @@ namespace API.DepotEice.DAL.Mappers
                 (DateTime)record["CreatedAt"],
                 (DateTime)record["CreatedAt"],
                 (int)record["ModuleId"]);
-        }
-
-        public static LoggedInUserEntity DbToLoggedInUser(this IDataRecord record)
-        {
-            return new LoggedInUserEntity()
-            {
-                Id = (string)record["Id"],
-                Email = (string)record["Email"],
-                ProfilePicture = (string)record["ProfilePicture"],
-                FirstName = (string)record["FirstName"],
-                LastName = (string)record["LastName"],
-                BirthDate = (DateOnly)record["BirthDate"],
-                CreatedAt = (DateTime)record["CreatedAt"],
-                UpdatedAt = (record["UpdatedAt"] is DBNull) ? null : (DateTime)record["UpdatedAt"],
-                DeletedAt = (record["DeletedAt"] is DBNull) ? null : (DateTime)record["DeletedAt"]
-            };
         }
 
         // TODO - Check
