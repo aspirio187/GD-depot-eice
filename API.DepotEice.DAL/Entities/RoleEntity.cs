@@ -21,11 +21,6 @@ namespace API.DepotEice.DAL.Entities
         /// </summary>
         public string Name { get; set; }
 
-        public RoleEntity()
-        {
-
-        }
-
         /// <summary>
         /// Instanciate an object <see cref="RoleEntity"/> with all its properties
         /// </summary>
