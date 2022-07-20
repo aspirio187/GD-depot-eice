@@ -8,9 +8,9 @@ BEGIN
 
 	INSERT INTO [dbo].[Messages]
 	(
-		Body,
-		UserFromId,
-		UserToId
+		Content,
+		SenderId,
+		ReceiverId
 	)
 	VALUES
 	(
