@@ -60,14 +60,38 @@ namespace API.DepotEice.DAL.Entities
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public ArticleEntity(int id, string title, string body, DateTime createdAt, DateTime? updatedAt, bool pinned, string userId)
+        public ArticleEntity(int id, string title, string body, DateTime createdAt, DateTime?
+            updatedAt, bool pinned, string userId)
         {
-            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
-            if (string.IsNullOrEmpty(title)) throw new ArgumentNullException(nameof(title));
-            if (string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
-            if (createdAt > DateTime.Now) throw new DateTimeOutOfRangeException(nameof(createdAt));
-            if (updatedAt < createdAt) throw new DateTimeOutOfRangeException(nameof(updatedAt));
-            if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (id <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (string.IsNullOrEmpty(title))
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (string.IsNullOrEmpty(body))
+            {
+                throw new ArgumentNullException(nameof(body));
+            }
+
+            if (createdAt > DateTime.Now)
+            {
+                throw new DateTimeOutOfRangeException(nameof(createdAt));
+            }
+
+            if (updatedAt < createdAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(updatedAt));
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
 
             Id = id;
             Title = title;
@@ -93,11 +117,30 @@ namespace API.DepotEice.DAL.Entities
         public ArticleEntity(string title, string body, DateTime createdAt, DateTime updatedAt,
             bool pinned, string userId)
         {
-            if (string.IsNullOrEmpty(title)) throw new ArgumentNullException(nameof(title));
-            if (string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
-            if (createdAt > DateTime.Now) throw new DateTimeOutOfRangeException(nameof(createdAt));
-            if (updatedAt < createdAt) throw new DateTimeOutOfRangeException(nameof(updatedAt));
-            if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (string.IsNullOrEmpty(title))
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (string.IsNullOrEmpty(body))
+            {
+                throw new ArgumentNullException(nameof(body));
+            }
+
+            if (createdAt > DateTime.Now)
+            {
+                throw new DateTimeOutOfRangeException(nameof(createdAt));
+            }
+
+            if (updatedAt < createdAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(updatedAt));
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
 
             Id = 0;
             Title = title;
