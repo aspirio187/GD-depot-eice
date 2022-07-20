@@ -35,7 +35,7 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// <see cref="ArticleEntity"/>'s update date and time
         /// </summary>
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Specify if <see cref="ArticleEntity"/> is pinned
@@ -60,8 +60,7 @@ namespace API.DepotEice.DAL.Entities
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public ArticleEntity(int id, string title, string body, DateTime createdAt,
-            DateTime updatedAt, bool pinned, string userId)
+        public ArticleEntity(int id, string title, string body, DateTime createdAt, DateTime? updatedAt, bool pinned, string userId)
         {
             if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
             if (string.IsNullOrEmpty(title)) throw new ArgumentNullException(nameof(title));

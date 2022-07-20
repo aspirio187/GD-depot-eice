@@ -3,5 +3,5 @@
 AS
 	SELECT *
 	FROM [Messages]
-	WHERE (SenderId = @userId) OR ([ReceiverId]= @userId)
+	WHERE ([ReceiverId] = @userId) OR ([SenderId] = @userId)
 GO

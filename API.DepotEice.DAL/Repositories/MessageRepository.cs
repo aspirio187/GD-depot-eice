@@ -47,7 +47,7 @@ namespace API.DepotEice.DAL.Repositories
 
             Command command = new Command("spCreateMessage", true);
 
-            command.AddParameter("body", entity.Body);
+            command.AddParameter("body", entity.Content);
             command.AddParameter("userFromId", entity.SenderId);
             command.AddParameter("userToId", entity.ReceiverId);
 
