@@ -12,4 +12,8 @@
     <Folder Include="Managers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API.DepotEice.DAL\API.DepotEice.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

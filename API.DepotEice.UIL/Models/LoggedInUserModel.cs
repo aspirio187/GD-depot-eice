@@ -1,6 +1,6 @@
-﻿namespace API.DepotEice.DAL.Entities
+﻿namespace API.DepotEice.UIL.Models
 {
-    public class LoggedInUserEntity
+    public class LoggedInUserModel
     {
         public string Id { get; set; }
         public string Email { get; set; }
