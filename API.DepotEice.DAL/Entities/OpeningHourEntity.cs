@@ -27,11 +27,6 @@ namespace API.DepotEice.DAL.Entities
         /// </summary>
         public DateTime CloseAt { get; set; }
 
-        public OpeningHoursEntity()
-        {
-
-        }
-
         /// <summary>
         /// Instanciate an object <see cref="OpeningHoursEntity"/> with all its properties
         /// </summary>

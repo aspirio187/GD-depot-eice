@@ -20,12 +20,12 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// Represent the <c>Title</c> column in the database
         /// </summary>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Represent the <c>Details</c> column in the database
         /// </summary>
-        public string Details { get; set; }
+        public string? Details { get; set; }
 
         /// <summary>
         /// Represent the <c>StartsAt</c> column in the database
@@ -55,7 +55,7 @@ namespace API.DepotEice.DAL.Entities
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
-        public ScheduleEntity(int id, string title, string details, DateTime startsAt,
+        public ScheduleEntity(int id, string? title, string? details, DateTime startsAt,
             DateTime endsAt, int moduleId)
         {
             if (id <= 0)

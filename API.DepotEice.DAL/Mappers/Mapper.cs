@@ -58,12 +58,10 @@ namespace API.DepotEice.DAL.Mappers
 
         public static OpeningHoursEntity DbToOpeningHours(this IDataRecord record)
         {
-            return new OpeningHoursEntity()
-            {
-                Id = (int)record["Id"],
-                OpenAt = (DateTime)record["OpenAt"],
-                CloseAt = (DateTime)record["CloseAt"]
-            };
+            return new OpeningHoursEntity(
+                id: (int)record["Id"],
+                openAt: (DateTime)record["OpenAt"],
+                closeAt: (DateTime)record["CloseAt"]);
         }
 
         public static RoleEntity DbToRole(this IDataRecord record)
@@ -75,12 +73,10 @@ namespace API.DepotEice.DAL.Mappers
 
         public static ScheduleFileEntity DbToScheduleFile(this IDataRecord record)
         {
-            return new ScheduleFileEntity()
-            {
-                Id = (int)record["Id"],
-                FilePath = (string)record["FilePath"],
-                ScheduleId = (int)record["ScheduleId"]
-            };
+            return new ScheduleFileEntity(
+                id: (int)record["Id"],
+                filePath: (string)record["FilePath"],
+                scheduleId: (int)record["ScheduleId"]);
         }
 
         public static ScheduleEntity DbToSchedule(this IDataRecord record)

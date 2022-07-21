@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spMessages_BetweenUsers]
-	@RequestUserId INT,
-	@TargetUserId INT
+	@RequestUserId UNIQUEIDENTIFIER,
+	@TargetUserId UNIQUEIDENTIFIER
 AS
 BEGIN
 	SELECT 

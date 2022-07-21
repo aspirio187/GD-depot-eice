@@ -26,11 +26,6 @@ namespace API.DepotEice.DAL.Entities
         /// </summary>
         public int ScheduleId { get; set; }
 
-        public ScheduleFileEntity()
-        {
-
-        }
-
         /// <summary>
         /// Instanciate an object <see cref="ScheduleFileEntity"/> with all its properties
         /// </summary>
