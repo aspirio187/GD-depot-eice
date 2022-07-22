@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spGetArticleComments]
-	@articleId int = 0
+	@articleId INT
 AS
 	SELECT *
-	FROM [Appointments]
-	WHERE [Appointments].[Id] = @articleId
-GO;
+	FROM [dbo].[ArticleComments]
+	WHERE [ArticleComments].[ArticleId] = @articleId
+GO

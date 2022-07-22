@@ -20,12 +20,12 @@ namespace API.DepotEice.DAL.Entities
         /// <summary>
         /// Appointment start date and time (hh:mm)
         /// </summary>
-        public DateTime StartsAt { get; set; }
+        public DateTime StartAt { get; set; }
 
         /// <summary>
         /// Appointment end date and time (hh:mm)
         /// </summary>
-        public DateTime EndsAt { get; set; }
+        public DateTime EndAt { get; set; }
 
         /// <summary>
         /// Appointment acceptance status <c>true = Accepted</c> <c>false = Not accepted</c>
@@ -38,32 +38,44 @@ namespace API.DepotEice.DAL.Entities
         public string UserId { get; set; }
 
         /// <summary>
-        /// Instanciate <see cref="AppointmentEntity"/> object
+        /// Instanciate an object <see cref="AppointmentEntity"/> and initialize all properties
         /// </summary>
         /// <param name="id">Appointment ID</param>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
         /// <param name="endsAt">Date and time at which ends the appointment</param>
         /// <param name="accepted">Appointment acceptance flag</param>
         /// <param name="userId">Linked user's ID</param>
-        /// <exception cref="IndexOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public AppointmentEntity(int id, DateTime startsAt, DateTime endsAt, bool accepted,
             string userId)
         {
-            if (id < 0) throw new IndexOutOfRangeException(nameof(id));
-            if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
-            if (string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (id <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (startsAt >= endsAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(startsAt));
+            }
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
 
             Id = id;
-            StartsAt = startsAt;
-            EndsAt = endsAt;
+            StartAt = startsAt;
+            EndAt = endsAt;
             Accepted = accepted;
             UserId = userId;
         }
 
         /// <summary>
-        /// Instanciate an <see cref="AppointmentEntity"/> object without specify ID
+        /// Instanciate an object <see cref="AppointmentEntity"/> for a creation in the database.
+        /// The constructor is useful for the Stored Procedure <c>spCreateAppointment</c>
         /// </summary>
         /// <param name="startsAt">Date and time at which starts the appointment</param>
         /// <param name="endsAt">Date and time at which ends the appointment</param>
@@ -71,14 +83,21 @@ namespace API.DepotEice.DAL.Entities
         /// <param name="userId">Linked user's ID</param>
         /// <exception cref="DateTimeOutOfRangeException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public AppointmentEntity(DateTime startsAt, DateTime endsAt, bool accepted, string userId)
+        public AppointmentEntity(DateTime startsAt, DateTime endsAt, string userId)
         {
-            if (startsAt >= endsAt) throw new DateTimeOutOfRangeException(nameof(startsAt));
-            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            if (startsAt >= endsAt)
+            {
+                throw new DateTimeOutOfRangeException(nameof(startsAt));
+            }
 
-            StartsAt = startsAt;
-            EndsAt = endsAt;
-            Accepted = accepted;
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            Id = 0;
+            StartAt = startsAt;
+            EndAt = endsAt;
             UserId = userId;
         }
     }
