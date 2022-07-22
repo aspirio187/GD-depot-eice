@@ -1,7 +1,0 @@
-<Project Sdk="MSBuild.Sdk.SqlProj/1.1.0"> <!-- This will pull in the required tools and dependencies to build a .dacpac with .NET Core -->
-    <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    </PropertyGroup>
-    <ItemGroup>
-    </ItemGroup>
-</Project>
