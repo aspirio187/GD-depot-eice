@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[spGetArticle]
-	@articleId int
+	@id INT
 AS
 	SELECT *
 	FROM [Articles]
-	WHERE [Articles].[Id] = @articleId
-RETURN 0
+	WHERE [Articles].[Id] = @id
+GO;

@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[Schedules]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	[Title] NVARCHAR(100) NULL,
-	[Details] NVARCHAR(MAX) NULL,
-	[StartTime] DATETIME NOT NULL,
-	[EndTime] DATETIME NOT NULL,
+	[Details] TEXT NULL,
+	[StartsAt] DATETIME2 NOT NULL,
+	[EndsAt] DATETIME2 NOT NULL,
 	[ModuleId] INT NOT NULL,
 	CONSTRAINT [FK_Schedules_Module] FOREIGN KEY ([ModuleId]) REFERENCES [Modules]([Id])
 )
